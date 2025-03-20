@@ -1,0 +1,36 @@
+//updated code with modifications
+
+
+import java.util.Scanner;
+
+public class countPath {
+
+public static int MazePath(int i, int j, int rows, int cols) {
+
+//base case : reached bottom right corner
+
+if( i == rows-1 && j == cols-1) return 1;
+
+//out of bound checks 
+if ( i > rows || j > cols) return 0;
+
+//move right and down
+return MazePath(i+1, j, rows, cols) + MazePath(i, j+1, rows, cols);
+}
+
+public static void main(String args[]) {
+
+Scanner sc = new Scanner (System.in);
+
+//take user input for maze size
+System.out.print("Enter number of rows(n): ");
+int n = sc.nextInt();
+
+System.out.print("Enter number of cols(m) : ");
+int m = sc.nextInt();
+sc.close();
+
+System.out.println("Total paths: " + MazePath(0, 0, n, m);
+
+}
+}
